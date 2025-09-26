@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:686983887335:android:dc535375d35f634c0d2542",
+        "mobilesdk_app_id": "1:686983887335:android:29fc50ed074f7bc00d2542",
         "android_client_info": {
-          "package_name": "oulol.tripod.messenger"
+          "package_name": "oulol.trigram.messenger"
         }
       },
       "oauth_client": [],
