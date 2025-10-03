@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+ apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
@@ -42,7 +42,7 @@ android {
         coreLibraryDesugaringEnabled true
     }
 
-    signingConfigs {
+    /*signingConfigs {
         debug {
             storeFile file("../TMessagesProj/config/release.keystore")
             storePassword RELEASE_STORE_PASSWORD
@@ -56,13 +56,13 @@ android {
             keyAlias RELEASE_KEY_ALIAS
             keyPassword RELEASE_KEY_PASSWORD
         }
-    }
+    }*/
 
     buildTypes {
         debug {
             debuggable true
             jniDebuggable true
-            signingConfig signingConfigs.debug
+            //signingConfig signingConfigs.debug
             applicationIdSuffix ".beta"
             minifyEnabled false
             shrinkResources false
@@ -74,8 +74,8 @@ android {
         standalone {
             debuggable false
             jniDebuggable false
-            signingConfig signingConfigs.release
-            applicationIdSuffix ".web"
+            //signingConfig signingConfigs.release
+            //applicationIdSuffix ".web"
             minifyEnabled true
             shrinkResources false
             multiDexEnabled true
@@ -86,7 +86,7 @@ android {
         release {
             debuggable false
             jniDebuggable false
-            signingConfig signingConfigs.release
+            //signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources false
             multiDexEnabled true
@@ -157,13 +157,14 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
             outputFileName = "app.apk"
-            output.versionCodeOverride = defaultConfig.versionCode * 10 + variant.productFlavors.get(0).abiVersionCode
+            output.versionCodeOverride = defaultConfig.versionCode * 1000 + Integer.parseInt(MOD_REV_CODE) * 10 + variant.productFlavors.get(0).abiVersionCode
         }
     }
 
     variantFilter { variant ->
         def names = variant.flavors*.name
         if (variant.buildType.name != "release" && !names.contains("afat")) {
+            setIgnore(true)
             setIgnore(true)
         }
     }

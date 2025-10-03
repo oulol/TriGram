@@ -149,7 +149,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
             outputFileName = "Telegram-Beta.apk"
-            output.versionCodeOverride = defaultConfig.versionCode * 10 + variant.productFlavors.get(0).abiVersionCode
+            output.versionCodeOverride = defaultConfig.versionCode * 1000 + Integer.parseInt(MOD_REV_CODE) * 10 + variant.productFlavors.get(0).abiVersionCode
         }
     }
 
