@@ -7,9 +7,104 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:686983887335:android:29fc50ed074f7bc00d2542",
+        "mobilesdk_app_id": "1:686983887335:android:b53234b669356e530d2542",
         "android_client_info": {
-          "package_name": "oulol.trigram.messenger"
+          "package_name": "org.telegram.messenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSaxX7mPYzqhNehsL0WMQmJA_q0MJmIo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686983887335:android:a4a9e289170aabc10d2542",
+        "android_client_info": {
+          "package_name": "org.telegram.messenger.beta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSaxX7mPYzqhNehsL0WMQmJA_q0MJmIo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686983887335:android:244d39f3b73fe8c00d2542",
+        "android_client_info": {
+          "package_name": "org.telegram.messenger.web"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSaxX7mPYzqhNehsL0WMQmJA_q0MJmIo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686983887335:android:068da684421c30e20d2542",
+        "android_client_info": {
+          "package_name": "ru.oulol.trigram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSaxX7mPYzqhNehsL0WMQmJA_q0MJmIo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686983887335:android:cabdfa024acabb8f0d2542",
+        "android_client_info": {
+          "package_name": "ru.oulol.trigram.beta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSaxX7mPYzqhNehsL0WMQmJA_q0MJmIo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686983887335:android:7afd7b1120fb8f150d2542",
+        "android_client_info": {
+          "package_name": "ru.oulol.trigram.web"
         }
       },
       "oauth_client": [],
