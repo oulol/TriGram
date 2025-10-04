@@ -846,7 +846,7 @@ public class ChangeUsernameActivity extends BaseFragment {
             tme.setLines(1);
             tme.setPadding(0, 0, 0, 0);
             tme.setSingleLine(true);
-            tme.setText(getMessagesController().linkPrefix + "/");
+            tme.setText("@");
             tme.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 17);
             tme.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
             tme.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP);
