@@ -39,13 +39,18 @@ public class LauncherIconController {
         VINTAGE("VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage),
         AQUA("AquaIcon", R.drawable.icon_4_background_sa, R.mipmap.icon_foreground_sa, R.string.AppIconAqua),
         TURBO("TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo),
-        PREMIUM("PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true);
+        PREMIUM("PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium),
+        ORIGINAL("OriginalIcon", R.drawable.icon_background_sa, R.mipmap.icon_original, R.string.AppIconDefault),
+        NOXORIGINAL("NoxOriginalIcon", R.mipmap.icon_2_background_sa, R.mipmap.icon_original, R.string.AppIconNox),
+        AQUAORIGINAL("AquaOriginalIcon", R.drawable.icon_4_background_sa, R.mipmap.icon_original, R.string.AppIconAqua),
+        AYU("AyuIcon", R.mipmap.icon_ayu_background, R.mipmap.icon_ayu_foreground, R.string.CustomIconAyu),
+        EXTERA480("Extera480Icon", R.mipmap.icon_extera480_background, R.mipmap.icon_extera480_foreground, R.string.CustomIconExtera480),
+        EXTERAMT("ExteraAmtIcon", R.mipmap.icon_exteraamt_background, R.mipmap.icon_exteraamt_foreground, R.string.CustomIconExteraAmethyst);
 
         public final String key;
         public final int background;
         public final int foreground;
         public final int title;
-        public final boolean premium;
 
         private ComponentName componentName;
 
@@ -57,15 +62,10 @@ public class LauncherIconController {
         }
 
         LauncherIcon(String key, int background, int foreground, int title) {
-            this(key, background, foreground, title, false);
-        }
-
-        LauncherIcon(String key, int background, int foreground, int title, boolean premium) {
             this.key = key;
             this.background = background;
             this.foreground = foreground;
             this.title = title;
-            this.premium = premium;
         }
     }
 }

@@ -23,6 +23,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,7 +50,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AppIconsSelectorCell extends RecyclerListView implements NotificationCenter.NotificationCenterDelegate {
-    public final static float ICONS_ROUND_RADIUS = 18;
+    public final static float ICONS_ROUND_RADIUS = 29;
 
     private List<LauncherIconController.LauncherIcon> availableIcons = new ArrayList<>();
     private LinearLayoutManager linearLayoutManager;
@@ -65,7 +66,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
         setItemAnimator(null);
         setLayoutAnimation(null);
 
-        setLayoutManager(linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        setLayoutManager(linearLayoutManager = new GridLayoutManager(context, 4));
         setAdapter(new Adapter() {
 
             @NonNull
@@ -91,29 +92,19 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
         addItemDecoration(new ItemDecoration() {
             @Override
             public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull State state) {
+                outRect.bottom = AndroidUtilities.dp(18);
                 int pos = parent.getChildViewHolder(view).getAdapterPosition();
-                if (pos == 0) {
+                if (pos % 4 == 0) {
                     outRect.left = AndroidUtilities.dp(18);
                 }
-                if (pos == getAdapter().getItemCount() - 1) {
+                if (pos % 4 == 3) {
                     outRect.right = AndroidUtilities.dp(18);
-                } else {
-                    int itemCount = getAdapter().getItemCount();
-                    if (itemCount == 4) {
-                        outRect.right = (getWidth() - AndroidUtilities.dp(36) - AndroidUtilities.dp(58) * itemCount) / (itemCount - 1);
-                    } else {
-                        outRect.right = AndroidUtilities.dp(24);
-                    }
                 }
             }
         });
         setOnItemClickListener((view, position) -> {
             IconHolderView holderView = (IconHolderView) view;
             LauncherIconController.LauncherIcon icon = availableIcons.get(position);
-            if (icon.premium && !UserConfig.hasPremiumOnAccounts()) {
-                fragment.showDialog(new PremiumFeatureBottomSheet(fragment, PremiumPreviewFragment.PREMIUM_FEATURE_APPLICATION_ICONS, true));
-                return;
-            }
 
             if (LauncherIconController.isEnabled(icon)) {
                 return;
@@ -276,19 +267,9 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
             iconView.setImageResource(icon.background);
 
             MarginLayoutParams params = (MarginLayoutParams) titleView.getLayoutParams();
-            if (icon.premium && !UserConfig.hasPremiumOnAccounts()) {
-                SpannableString str = new SpannableString("d " + LocaleController.getString(icon.title));
-                ColoredImageSpan span = new ColoredImageSpan(R.drawable.msg_mini_premiumlock);
-                span.setTopOffset(1);
-                span.setSize(AndroidUtilities.dp(13));
-                str.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            params.rightMargin = 0;
+            titleView.setText(LocaleController.getString(icon.title));
 
-                params.rightMargin = AndroidUtilities.dp(4);
-                titleView.setText(str);
-            } else {
-                params.rightMargin = 0;
-                titleView.setText(LocaleController.getString(icon.title));
-            }
             setSelected(LauncherIconController.isEnabled(icon), false);
         }
     }
@@ -296,7 +277,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
     public static class AdaptiveIconImageView extends ImageView {
         private Drawable foreground;
         private Path path = new Path();
-        private int outerPadding = AndroidUtilities.dp(5);
+        private int outerPadding = AndroidUtilities.dp(8);
         private int backgroundOuterPadding = AndroidUtilities.dp(42);
 
         public AdaptiveIconImageView(Context context) {

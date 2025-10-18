@@ -55,6 +55,7 @@
     <string name="ResetAccountInfo">Поскольку аккаунт **%1$s** используется и защищён паролем, в целях безопасности мы удалим его только через неделю.\n\nВы можете передумать и остановить отсчёт в любой момент.</string>
     <string name="ResetAccountStatus">Вы сможете сбросить свой аккаунт через:</string>
     <string name="ResetAccountCancelledAlert">Ваши недавние попытки сбросить аккаунт были отменены его активным пользователем. Попробовать снова можно через 7 дней.</string>
+    <string name="TriModsUiSettings">Интерфейс</string>
     <string name="ResetAccountButton">СБРОСИТЬ АККАУНТ</string>
     <string name="CancelLinkExpired">Ссылка неверна или устарела.</string>
     <string name="CancelLinkSuccessTitle">Готово</string>
@@ -260,4 +261,5 @@
     <string name="RemindTodayAt">\'Отправить сегодня в\' HH:mm</string>
     <string name="RemindDayAt">\'Отправить\' d MMM \'в\' HH:mm</string>
     <string name="RemindDayYearAt">\'Напомнить\' d MMM yyyy \'в\' HH:mm</string>
+    <string name="CustomIconExteraAmethyst">Аметист</string>
 </resources>

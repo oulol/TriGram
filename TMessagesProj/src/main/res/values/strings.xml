@@ -9741,4 +9741,9 @@
     <string name="AppName" translatable="false">TriGram</string>
     <string name="AppNameBeta" translatable="false">TriGram Beta</string>
     <string name="Page1Title" translatable="false">TriGram</string>
+    <string name="CustomIconAyu" translatable="false">AyuGram</string>
+    <string name="CustomIconExtera480" translatable="false">extera: 480</string>
+    <string name="CustomIconExteraAmethyst">Amethyst</string>
+    <string name="TriModsTitle" translatable="false">TriMods</string>
+    <string name="TriModsUiSettings">UI</string>
 </resources>
